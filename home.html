@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ticket Reservation - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎫 Ticket Reservation System</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('movies')">Movies</a></li>
+        <li><a href="#" onclick="showSection('buses')">Buses</a></li>
+        <li><a href="#" onclick="showSection('flights')">Flights</a></li>
+        <li><a href="#" onclick="showSection('myBookings')">My Bookings</a></li>
+      </ul>
+    </nav>
+
+    <button onclick="logout()" class="logout-btn">Logout</button>
+
+  </header>
+
+   <!-- Buses -->
+  <section id="buses" class="info-section hidden">
+    <div class="overlay-container">
+      <img src="bus - Copy.jpg" class="background-image" alt="Buses">
+      <div class="overlay-content">
+        <h2>🚌 Available Buses</h2>
+        <ul>
+          <li>Hyderabad → Bangalore <button class="bookBtn" data-item="Hyderabad → Bangalore" data-type="Bus">Book</button></li>
+          <li>Vijayawada → Chennai <button class="bookBtn" data-item="Vijayawada → Chennai" data-type="Bus">Book</button></li>
+          <li>Guntur → Tirupati <button class="bookBtn" data-item="Guntur → Tirupati" data-type="Bus">Book</button></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Movies -->
+  <section id="movies" class="info-section active">
+    <div class="overlay-container">
+      <img src="show.jpg" class="background-image" alt="Movies">
+      <div class="overlay-content">
+        <h2>🎬 Available Movies</h2>
+        <ul>
+          <li>RRR <button class="bookBtn" data-item="RRR" data-type="Movie">Book</button></li>
+          <li>Pushpa 2 <button class="bookBtn" data-item="Pushpa 2" data-type="Movie">Book</button></li>
+          <li>Salaar <button class="bookBtn" data-item="Salaar" data-type="Movie">Book</button></li>
+          <li>Devara <button class="bookBtn" data-item="Devara" data-type="Movie">Book</button></li>
+          <li>Hi Nanna <button class="bookBtn" data-item="Hi Nanna" data-type="Movie">Book</button></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- Flights -->
+  <section id="flights" class="info-section hidden">
+    <div class="overlay-container">
+      <img src="flight.jpg" class="background-image" alt="Flights">
+      <div class="overlay-content">
+        <h2>✈️ Available Flights</h2>
+        <ul>
+          <li>Hyderabad → Mumbai <button class="bookBtn" data-item="Hyderabad → Mumbai" data-type="Flight">Book</button></li>
+          <li>Delhi → Chennai <button class="bookBtn" data-item="Delhi → Chennai" data-type="Flight">Book</button></li>
+          <li>Bangalore → Vizag <button class="bookBtn" data-item="Bangalore → Vizag" data-type="Flight">Book</button></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking Modal -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+     <span id="closeModal" class="close-btn">&times;</span>
+      <h2 id="modalTitle">Booking Details</h2>
+      <input type="text" id="name" placeholder="Your Name">
+      <input type="email" id="email" placeholder="Email">
+      <input type="tel" id="phone" placeholder="Phone Number">
+      <input type="number" id="tickets" placeholder="Number of Tickets">
+      <input type="date" id="date">
+      <input type="time" id="time">
+      <input type="text" id="location" placeholder="Location">
+      <button id="submitBtn">Submit</button>
+    </div>
+  </div>
+
+  <!-- My Bookings -->
+  <section id="myBookings" class="info-section hidden">
+    <h2 style="text-align:center; color:#ffcc00;">My Bookings</h2>
+    <div class="table-container">
+    <table id="myBookingTable">
+      <thead>
+        <tr>
+          <th>Event/Location</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Tickets</th>
+          <th>Date</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Ticket Reservation System</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

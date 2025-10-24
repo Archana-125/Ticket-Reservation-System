@@ -1,0 +1,256 @@
+/* ===== General ===== */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  background: linear-gradient(135deg, oklch(17.213% 0.00504 17.44), lab(42.8% 48.53 27.24));
+}
+
+/* ===== Auth Page ===== */
+.auth-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.auth-container {
+  background: #0d100db3;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  width: 320px;
+}
+
+.auth-container h2 {
+  margin-bottom: 15px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ===== Home Page ===== */
+header {
+  text-align: center;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+  margin: 0;
+  color: #ffcc00;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #ffcc00;
+}
+
+/* ===== Sections with background image ===== */
+.info-section {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  filter: brightness(70%);
+}
+
+.overlay-content {
+  position: relative;
+  z-index: 1;
+  background: lch(41.58% 40.29 26 / 0.016);
+  padding: 25px;
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+.overlay-content h2 {
+  color: #ffcc00;
+}
+
+.overlay-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.overlay-content li {
+  background: oklab(0% 0 0);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overlay-content li button {
+  background: linear-gradient(45deg, hsl(350, 85%, 46%), #0072ff);
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.overlay-content li button:hover {
+  transform: scale(1.05);
+}
+
+footer {
+  text-align: center;
+  background: oklab(26.389000000000003% 0.09268 -0.00383 / 0.986);
+  padding: 10px;
+}
+
+
+/* ===== Booking Modal ===== */
+.modal {
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: hwb(60 2% 98% / 0.502);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  color: #000;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  background: green;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.close-btn {
+  float: right;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#myBookingTable {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#myBookingTable th, #myBookingTable td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+#myBookingTable th {
+  background-color: hwb(0 56% 42%);
+  color: #000;
+  font-weight: bold;
+}
+
+#myBookingTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.logout-btn {
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.logout-btn:hover {
+  background-color: #ffdb4d;
+}

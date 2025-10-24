@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Reservation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    .event-card {
+      width: 300px;
+      background: #fff;
+      margin: 50px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .event-card img {
+      width: 100%;
+      display: block;
+    }
+    .event-card button {
+      padding: 10px 20px;
+      margin: 15px 0;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .event-card button:hover {
+      background: #0056b3;
+    }
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+    }
+    .modal-content input, .modal-content select {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .modal-content button {
+      width: 100%;
+      padding: 10px;
+      background: green;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .modal-content button:hover {
+      background: darkgreen;
+    }
+    .close-btn {
+      float: right;
+      cursor: pointer;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="event-card">
+    <img src="https://via.placeholder.com/300x200" alt="Event">
+    <h3>Event Name</h3>
+    <p>Date: 25 Oct 2025</p>
+    <button id="bookBtn">Book</button>
+  </div>
+
+  <!-- Modal Form -->
+  <div class="modal" id="bookingModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+      <h2>Booking Details</h2>
+      <input type="text" id="name" placeholder="Your Name">
+      <input type="email" id="email" placeholder="Email">
+      <input type="tel" id="phone" placeholder="Phone Number">
+      <input type="number" id="tickets" placeholder="Number of Tickets">
+      <input type="date" id="date">
+      <input type="time" id="time">
+      <input type="text" id="location" placeholder="Location">
+      <button id="submitBtn">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    const bookBtn = document.getElementById('bookBtn');
+    const modal = document.getElementById('bookingModal');
+    const closeModal = document.getElementById('closeModal');
+    const submitBtn = document.getElementById('submitBtn');
+
+    bookBtn.addEventListener('click', () => {
+      modal.style.display = 'flex';
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+
+    submitBtn.addEventListener('click', () => {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const tickets = document.getElementById('tickets').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+      const location = document.getElementById('location').value;
+
+      if (!name || !email || !phone || !tickets || !date || !time || !location) {
+        alert("Please fill all details!");
+        return;
+      }
+
+      alert(`Booking Confirmed!\nName: ${name}\nEmail: ${email}\nTickets: ${tickets}\nDate: ${date}\nTime: ${time}\nLocation: ${location}`);
+      modal.style.display = 'none';
+    });
+  </script>
+</body>
+</html>

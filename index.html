@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Signup - Ticket Reservation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-body" style="background:url('FBM\ image.jpg')no-repeat center center fixed">
+  <div class="auth-container">
+    <h2>🎟️ Ticket Reservation System</h2>
+
+    <!-- Signup Form -->
+    <div id="signup-form" class="form">
+      <h3>Signup</h3>
+      <input type="text" id="signup-username" placeholder="Username" required />
+      <input type="email" id="signup-email" placeholder="Email" required />
+      <input type="password" id="signup-password" placeholder="Password" required />
+      <button onclick="signup()">Signup</button>
+      <p>Already have an account? <a href="#" onclick="toggleForm('login')">Login</a></p>
+    </div>
+
+    <!-- Login Form -->
+    <div id="login-form" class="form hidden">
+      <h3>Login</h3>
+      <input type="text" id="login-username" placeholder="Username" required />
+      <input type="password" id="login-password" placeholder="Password" required />
+      <button onclick="login()">Login</button>
+      <p>Don’t have an account? <a href="#" onclick="toggleForm('signup')">Signup</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
